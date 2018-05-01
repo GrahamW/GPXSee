@@ -338,12 +338,11 @@ void GraphView::resizeEvent(QResizeEvent *)
 	redraw();
 }
 
-void GraphView::mousePressEvent(QMouseEvent *e)
+void GraphView::mouseMoveEvent(QMouseEvent *e)
 {
-	if (e->button() == Qt::LeftButton)
-		newSliderPosition(mapToScene(e->pos()));
+	newSliderPosition(mapToScene(e->pos()));
 
-	QGraphicsView::mousePressEvent(e);
+	QGraphicsView::mouseMoveEvent(e);
 }
 
 void GraphView::plot(QPainter *painter, const QRectF &target, qreal scale)

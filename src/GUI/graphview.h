@@ -86,7 +86,7 @@ private:
 	void addItem(QGraphicsItem *item);
 
 	void resizeEvent(QResizeEvent *);
-	void mousePressEvent(QMouseEvent *);
+	void mouseMoveEvent(QMouseEvent *);
 
 	Units _units;
 	qreal _xScale, _yScale;
