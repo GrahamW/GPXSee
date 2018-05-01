@@ -2,8 +2,8 @@
 #include "markeritem.h"
 
 
-#define SIZE  8
-#define WIDTH 2
+#define SIZE  16
+#define WIDTH  2
 
 MarkerItem::MarkerItem(QGraphicsItem *parent) : QGraphicsItem(parent)
 {
@@ -23,8 +23,12 @@ void MarkerItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option
 
 	painter->setRenderHint(QPainter::Antialiasing, false);
 	painter->setPen(QPen(_color, WIDTH));
-	painter->drawLine(-SIZE/2, 0, SIZE/2, 0);
-	painter->drawLine(0, -SIZE/2, 0, SIZE/2);
+	painter->drawLine(-SIZE/2, 0, -SIZE/4, 0);
+	painter->drawLine(SIZE/2, 0, SIZE/4, 0);
+	painter->drawLine(0, -SIZE/2, 0, -SIZE/4);
+	painter->drawLine(0, SIZE/2, 0, SIZE/4);
+
+	painter->drawArc(-SIZE/2, -SIZE/2, SIZE, SIZE, 0, 5760);
 
 //	painter->drawRect(boundingRect());
 }
